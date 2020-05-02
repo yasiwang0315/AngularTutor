@@ -11,8 +11,8 @@ export class ServerComponent {
     serverId = 10;
     serverStatus = 'offLine';
     counter = 0;
-    isLogin = false;
-    userName: string;
+    isMeal = false;
+    mealName: string;
     students: Student[] = [new Student('Bill Gates', 'Computer Science'),
                            new Student('Steve Jobs', 'Computer Science'),
                            new Student('Elon Musk', 'Computer Science')];
@@ -29,16 +29,17 @@ export class ServerComponent {
       this.counter = 0;
     }
 
-    login() {
-      this.isLogin = true;
+    meal() {
+      this.isMeal = false;
     }
 
-    signOut() {
-      this.isLogin = false;
+    notMeal() {
+      this.isMeal = false;
     }
 
     // Event Binding
     onUpdateUserName(event: Event) {
+      console.log(event);
       this.userName = (<HTMLInputElement>event.target).value;
     }
 }

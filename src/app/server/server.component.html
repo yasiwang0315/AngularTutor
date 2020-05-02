@@ -9,35 +9,21 @@
 <button class="btn btn-primary" (click)="counterPlus()" style="margin-right: 10px"> Add One</button>
 <button class="btn btn-primary" (click)="resetCounter()"> Reset Counter</button>
 
-<hr>
-<h4>This is a input Box with Event Binding</h4>
-<div>
-  <span>User Name: </span>
-  <input type="text" (input)="onUpdateUserName($event)">
-</div>
-
-<div>
-  <span>Password: </span>
-  <input type="password">
-</div>
-<div *ngIf="isLogin" class="informBoxBoarder"> You Loggedin as {{ userName }} </div>
-<button class="btn btn-light" (click)="login()" style="margin-right: 10px"> Login </button>
-<button class="btn btn-light" (click)="signOut()"> Sign Out </button>
 
 <hr>
 <h4>This is a input Box with Two Way Data Binding</h4>
 <div>
   <span>User Name: </span>
-  <input type="text" [(ngModel)]="userName">
+  <input type="text" [(ngModel)]="mealName">
 </div>
 
 <div>
   <span>Password: </span>
   <input type="password">
 </div>
-<div *ngIf="isLogin" class="informBoxBoarder"> You Loggedin as {{ userName }} </div>
-<button class="btn btn-light" (click)="login()" style="margin-right: 10px"> Login </button>
-<button class="btn btn-light" (click)="signOut()"> Sign Out </button>
+<button class="btn btn-light" (click)="meal()" style="margin-right: 10px"> check </button>
+<div *ngIf="meal" class="informBoxBoarder"> You meal as {{ mealName }} </div>
+<div *ngIf="notMeal" class="informBoxBoarder"> The ingredients cannot make a meal </div>
 
 <hr>
 <h4>This is a StudentList managed by ngfor loop</h4>
